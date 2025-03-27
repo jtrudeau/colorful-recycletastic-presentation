@@ -1,9 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import Slide from './Slide';
 import Navigation from './Navigation';
 import FadeInSection from './FadeInSection';
 import RecycleIcon from './RecycleIcon';
+import YouTubeEmbed from './YouTubeEmbed';
 import { cn } from '@/lib/utils';
 
 const RecyQuestPresentation: React.FC = () => {
@@ -113,7 +113,7 @@ const RecyQuestPresentation: React.FC = () => {
         </div>
       </Slide>
       
-      {/* Team Members Slide */}
+      {/* Team Slide */}
       <Slide 
         id="slide-2"
         className="bg-gradient-to-br from-recypurple/10 to-recyblue/20"
@@ -122,85 +122,97 @@ const RecyQuestPresentation: React.FC = () => {
       >
         <div className="h-full flex flex-col">
           <FadeInSection delay={100}>
-            <div className="text-center mb-12">
-              <div className="mb-2 px-3 py-1 bg-recypurple/90 text-white text-sm rounded-full inline-block">
+            <div className="text-center mb-10">
+              <div className="mb-2 px-3 py-1 bg-recypurple text-white text-sm rounded-full inline-block">
                 Meet the Team
               </div>
               <h1 className="text-4xl font-bold">The Recycling Rangers</h1>
             </div>
           </FadeInSection>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 flex-grow">
-            <FadeInSection delay={300} direction="left">
-              <div className="glass rounded-xl p-6 flex flex-col h-full">
-                <div className="w-16 h-16 bg-recyblue/20 rounded-full flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mx-auto">
+            <div className="col-span-1 flex justify-end">
+              <FadeInSection delay={300} direction="up">
+                <div className="team-card flex flex-col text-left w-full">
+                  <div className="w-16 h-16 bg-recyblue/20 rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <h3 className="text-gray-800">Project Manager</h3>
+                  <p className="text-gray-700 font-medium mb-3">[Name]</p>
+                  <p className="text-gray-600">Coordinated our meetings and deadlines</p>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Project Manager</h3>
-                <p className="text-gray-600 font-medium">[Name]</p>
-                <p className="text-gray-500 text-sm mt-2">Coordinated our meetings and deadlines</p>
-              </div>
-            </FadeInSection>
+              </FadeInSection>
+            </div>
             
-            <FadeInSection delay={500} direction="up">
-              <div className="glass rounded-xl p-6 flex flex-col h-full">
-                <div className="w-16 h-16 bg-recygreen/20 rounded-full flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
-                  </svg>
+            <div className="col-span-1">
+              <FadeInSection delay={400} direction="up">
+                <div className="team-card flex flex-col text-left w-full">
+                  <div className="w-16 h-16 bg-recygreen/20 rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+                    </svg>
+                  </div>
+                  <h3 className="text-gray-800">Lead Researcher</h3>
+                  <p className="text-gray-700 font-medium mb-3">[Name]</p>
+                  <p className="text-gray-600">Gathered information on recycling behaviors</p>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Lead Researcher</h3>
-                <p className="text-gray-600 font-medium">[Name]</p>
-                <p className="text-gray-500 text-sm mt-2">Gathered information on recycling behaviors</p>
-              </div>
-            </FadeInSection>
+              </FadeInSection>
+            </div>
             
-            <FadeInSection delay={700} direction="right">
-              <div className="glass rounded-xl p-6 flex flex-col h-full">
-                <div className="w-16 h-16 bg-recyyellow/20 rounded-full flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M2 3h20"></path>
-                    <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"></path>
-                    <path d="m7 21 5-5 5 5"></path>
-                  </svg>
+            <div className="col-span-1 flex justify-start">
+              <FadeInSection delay={500} direction="up">
+                <div className="team-card flex flex-col text-left w-full">
+                  <div className="w-16 h-16 bg-recyyellow/20 rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M2 3h20"></path>
+                      <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"></path>
+                      <path d="m7 21 5-5 5 5"></path>
+                    </svg>
+                  </div>
+                  <h3 className="text-gray-800">Designer</h3>
+                  <p className="text-gray-700 font-medium mb-3">[Name]</p>
+                  <p className="text-gray-600">Created game visuals and slides</p>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Designer</h3>
-                <p className="text-gray-600 font-medium">[Name]</p>
-                <p className="text-gray-500 text-sm mt-2">Created game visuals and presentation slides</p>
-              </div>
-            </FadeInSection>
+              </FadeInSection>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-16">
+            <div className="col-span-1 flex justify-end">
+              <FadeInSection delay={600} direction="up">
+                <div className="team-card flex flex-col text-left w-full">
+                  <div className="w-16 h-16 bg-recyorange/20 rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  </div>
+                  <h3 className="text-gray-800">Programmer</h3>
+                  <p className="text-gray-700 font-medium mb-3">[Name]</p>
+                  <p className="text-gray-600">Developed the game using Scratch</p>
+                </div>
+              </FadeInSection>
+            </div>
             
-            <FadeInSection delay={900} direction="left">
-              <div className="glass rounded-xl p-6 flex flex-col h-full">
-                <div className="w-16 h-16 bg-recyorange/20 rounded-full flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                  </svg>
+            <div className="col-span-1 flex justify-start">
+              <FadeInSection delay={700} direction="up">
+                <div className="team-card flex flex-col text-left w-full">
+                  <div className="w-16 h-16 bg-recypink/20 rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#EC4899" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </div>
+                  <h3 className="text-gray-800">Communications Lead</h3>
+                  <p className="text-gray-700 font-medium mb-3">[Name]</p>
+                  <p className="text-gray-600">Organized our presentation</p>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Programmer</h3>
-                <p className="text-gray-600 font-medium">[Name]</p>
-                <p className="text-gray-500 text-sm mt-2">Developed the game using Scratch</p>
-              </div>
-            </FadeInSection>
-            
-            <FadeInSection delay={1100} direction="up">
-              <div className="glass rounded-xl p-6 flex flex-col h-full">
-                <div className="w-16 h-16 bg-recypink/20 rounded-full flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#EC4899" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2">Communications Lead</h3>
-                <p className="text-gray-600 font-medium">[Name]</p>
-                <p className="text-gray-500 text-sm mt-2">Organized our presentation</p>
-              </div>
-            </FadeInSection>
+              </FadeInSection>
+            </div>
           </div>
         </div>
       </Slide>
@@ -215,22 +227,22 @@ const RecyQuestPresentation: React.FC = () => {
         <div className="h-full flex flex-col">
           <FadeInSection delay={100}>
             <div className="text-center mb-10">
-              <div className="mb-2 px-3 py-1 bg-recyred/90 text-white text-sm rounded-full inline-block">
+              <div className="mb-2 px-3 py-1 bg-recyred text-white text-sm rounded-full inline-block">
                 The Problem
               </div>
               <h1 className="text-4xl font-bold">Recycling Challenges</h1>
             </div>
           </FadeInSection>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 flex-grow">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <FadeInSection delay={300} direction="left">
-              <div className="glass rounded-xl p-8 flex flex-col h-full relative overflow-hidden">
-                <h2 className="text-2xl font-bold mb-4 text-gray-800">Global Issue</h2>
+              <div className="problem-container">
+                <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Global Issue</h2>
                 
-                <div className="space-y-4 z-10">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-recyred/20 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <div className="space-y-6">
+                  <div className="problem-point">
+                    <div className="w-10 h-10 bg-recyred/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="8" x2="12" y2="12"></line>
                         <line x1="12" y1="16" x2="12.01" y2="16"></line>
@@ -239,9 +251,9 @@ const RecyQuestPresentation: React.FC = () => {
                     <p className="text-gray-700">Low recycling rates worldwide</p>
                   </div>
                   
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-recyred/20 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="problem-point">
+                    <div className="w-10 h-10 bg-recyred/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="8" x2="12" y2="12"></line>
                         <line x1="12" y1="16" x2="12.01" y2="16"></line>
@@ -250,9 +262,9 @@ const RecyQuestPresentation: React.FC = () => {
                     <p className="text-gray-700">Growing landfills and ocean pollution</p>
                   </div>
                   
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-recyred/20 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="problem-point">
+                    <div className="w-10 h-10 bg-recyred/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="8" x2="12" y2="12"></line>
                         <line x1="12" y1="16" x2="12.01" y2="16"></line>
@@ -261,58 +273,44 @@ const RecyQuestPresentation: React.FC = () => {
                     <p className="text-gray-700">Recyclable materials going to waste</p>
                   </div>
                 </div>
-                
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 opacity-10">
-                  <RecycleIcon color="#EF4444" />
-                </div>
               </div>
             </FadeInSection>
             
             <FadeInSection delay={500} direction="right">
-              <div className="glass rounded-xl p-8 flex flex-col h-full relative overflow-hidden">
-                <h2 className="text-2xl font-bold mb-4 text-gray-800">Our School Problem</h2>
+              <div className="problem-container">
+                <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Our School Problem</h2>
                 
-                <div className="space-y-6 z-10">
-                  <div className="relative w-full h-8 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="absolute left-0 top-0 h-full bg-recyred rounded-full" style={{ width: '60%' }}></div>
-                    <div className="absolute inset-0 flex items-center justify-center font-semibold text-gray-800">
-                      60% Recyclables in Trash
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 mt-6">
-                    <p className="text-gray-700 mb-3">Common recycling mistakes at our school:</p>
-                    <ul className="space-y-2">
-                      <li className="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="18" y1="6" x2="6" y2="18"></line>
-                          <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                        <span className="text-gray-600">Not knowing which bin to use</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="18" y1="6" x2="6" y2="18"></line>
-                          <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                        <span className="text-gray-600">Throwing food waste in recycling</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="18" y1="6" x2="6" y2="18"></line>
-                          <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                        <span className="text-gray-600">Lack of motivation to recycle properly</span>
-                      </li>
-                    </ul>
+                <div className="mb-8">
+                  <div className="problem-stat bg-recyred text-white text-center mb-6 w-full">
+                    60% Recyclables in Trash
                   </div>
                 </div>
                 
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 opacity-10">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M3 6h18"></path>
-                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                  </svg>
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6">
+                  <h3 className="text-gray-800 mb-4">Common recycling mistakes:</h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-center gap-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                      <span className="text-gray-700">Not knowing which bin to use</span>
+                    </li>
+                    <li className="flex items-center gap-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                      <span className="text-gray-700">Throwing food waste in recycling</span>
+                    </li>
+                    <li className="flex items-center gap-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                      <span className="text-gray-700">Lack of motivation to recycle properly</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </FadeInSection>
@@ -859,16 +857,11 @@ const RecyQuestPresentation: React.FC = () => {
           <div className="flex-grow flex items-center justify-center">
             <FadeInSection delay={300}>
               <div className="glass border-2 border-recyblue/40 rounded-xl p-6 max-w-3xl mx-auto">
-                <div className="bg-black/90 rounded-lg aspect-video flex items-center justify-center relative">
-                  <div className="text-center text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-4 cursor-pointer hover:scale-110 transition-transform">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                    </svg>
-                    <h3 className="text-xl font-semibold mb-2">Demo Video</h3>
-                    <p className="text-gray-400 max-w-md mx-auto">Click to play a demonstration of our RecyQuest game</p>
-                  </div>
-                </div>
+                <YouTubeEmbed 
+                  embedUrl="https://youtu.be/jyHAcXt5fCc?si=bIeHee0t_30a9v15&t=1191" 
+                  title="RecyQuest Game Demo" 
+                  className="mb-6"
+                />
                 
                 <div className="mt-6 bg-white/80 backdrop-blur-sm rounded-lg p-4">
                   <h3 className="font-bold text-gray-800 mb-2 text-center">Live Demonstration Instructions</h3>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface NavigationProps {
@@ -15,7 +14,7 @@ const Navigation: React.FC<NavigationProps> = ({
   onNext
 }) => {
   return (
-    <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-4">
+    <div className="slide-navigation flex items-center gap-4 bg-white/60 backdrop-blur-md p-3 rounded-full shadow-xl">
       <button
         onClick={onPrevious}
         disabled={currentSlide === 0}
@@ -27,7 +26,7 @@ const Navigation: React.FC<NavigationProps> = ({
         </svg>
       </button>
       
-      <div className="px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm font-medium">
+      <div className="px-5 py-2 rounded-full bg-white/90 backdrop-blur-sm font-medium text-lg">
         {currentSlide + 1} / {totalSlides}
       </div>
       

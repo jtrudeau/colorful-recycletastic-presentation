@@ -1,4 +1,3 @@
-
 import React, { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -29,7 +28,7 @@ const Slide: React.FC<SlideProps> = ({
     <div
       id={id}
       className={cn(
-        'slide w-full h-full p-8 flex flex-col relative',
+        'slide w-full h-full flex flex-col relative',
         color,
         isActive ? 'active' : '',
         className
@@ -37,7 +36,9 @@ const Slide: React.FC<SlideProps> = ({
       style={slideStyle}
       data-speaker-notes={speakerNotes}
     >
-      {children}
+      <div className="w-[90%] max-w-[1200px] mx-auto px-8 sm:px-10 md:px-12 lg:px-16 py-10 h-full">
+        {children}
+      </div>
     </div>
   );
 };
